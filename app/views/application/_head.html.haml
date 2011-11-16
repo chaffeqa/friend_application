@@ -7,3 +7,5 @@
 = javascript_include_tag "application"
 = content_for :head
 = csrf_meta_tag
+- if Rails.env.production?
+  = render 'google_analytics'
