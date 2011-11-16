@@ -1,0 +1,9 @@
+!!!
+%html
+  %head=render 'head'
+  %body
+    .topbar= render 'header'
+    .container
+      =render partial: 'flash', locals: {flash: flash}
+      = yield
+    %footer= render 'footer'

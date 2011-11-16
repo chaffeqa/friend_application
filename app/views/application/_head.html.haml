@@ -1,0 +1,9 @@
+%title Quinn's Friend Application
+%meta{:charset => "utf-8"}
+%meta{name: 'author', content: "Quinn Chaffee"}
+/[if lt IE 9]
+  =javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+= stylesheet_link_tag "application"
+= javascript_include_tag "application"
+= content_for :head
+= csrf_meta_tag

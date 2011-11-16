@@ -1,0 +1,41 @@
+= form_for @friend_request do |f|
+  -if @friend_request.errors.any?
+    .alert-message.block-message.error
+      %h2= "#{pluralize(@friend_request.errors.count, "error")} prohibited your application:"
+      %ul
+        - @friend_request.errors.full_messages.each do |msg|
+          %li= msg
+  %fieldset
+    %legend Please use appropriate nicknames
+    .clearfix
+      = f.label :first_name
+      .input= f.text_field :first_name
+    .clearfix
+      = f.label :last_name
+      .input= f.text_field :last_name
+    .clearfix
+      = f.label :email
+      .input= f.email_field :email
+  %fieldset
+    %legend Answer correctly... -ish
+    .clearfix
+      = f.label :means_of_communication
+      .input
+        %ul.inputs-list
+          - FriendRequest::MEANS_OF_COMMUNICATION.each do |option|
+            %li
+              %label
+                = f.radio_button :means_of_communication, option
+                %span= option
+    .clearfix
+      = f.label :times_you_will_contact_each_year, "Contact per year"
+      .input.input-append
+        = f.number_field :times_you_will_contact_each_year, class: "span1"
+        %label.add-on times
+    .clearfix
+      = f.label :length_of_conversation_minute, "Conversation length"
+      .input.input-append
+        = f.number_field :length_of_conversation_minute, class: "span1"
+        %label.add-on minutes
+  .actions
+    = f.submit 'Submit Application', class: "btn primary"

@@ -1,0 +1,5 @@
+- [[:notice,:success],[:alert,:error]].each do |key, twitter_class|
+  - Rails.logger.error "#{flash.inspect}"
+  .alert-message.block-message.fade.in{class: "#{twitter_class}", id: key, style: "display: #{flash.key?(key) ? 'block' : 'none'}", :"data-alert" => true}
+    = link_to 'x', 'javascript:null(0);', class: 'close'
+    != flash.try(key).to_s

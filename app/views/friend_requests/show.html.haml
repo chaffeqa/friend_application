@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @friend_request.first_name
+%p
+  %b Last name:
+  = @friend_request.last_name
+%p
+  %b Means of communication:
+  = @friend_request.means_of_communication
+%p
+  %b Times you will contact each year:
+  = @friend_request.times_you_will_contact_each_year
+%p
+  %b Length of conversation minute:
+  = @friend_request.length_of_conversation_minute
+
+= link_to 'Edit', edit_friend_request_path(@friend_request)
+\|
+= link_to 'Back', friend_requests_path

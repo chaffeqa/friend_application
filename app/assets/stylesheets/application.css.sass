@@ -1,0 +1,25 @@
+//= require_self
+//= require_tree .
+
+@import "bootstrap.scss"
+
+$background-color: #eee
+$header-color: #f5f5f5
+$container-color: #fff
+
+body
+  padding-top: 40px
+  background-color: $background-color
+  .topbar
+    border: 0
+    background-color: $header-color
+  & > .container
+    background-color: $container-color
+    padding: 20px
+    +border-radius(3px)
+    +box-shadow()
+    header
+      padding: 20px 20px 10px
+  footer
+    p
+      text-align: center

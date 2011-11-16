@@ -1,0 +1,27 @@
+%h1 Listing friend_requests
+
+%table
+  %tr
+    %th First name
+    %th Last name
+    %th Means of communication
+    %th Times you will contact each year
+    %th Length of conversation minute
+    %th
+    %th
+    %th
+
+  - @friend_requests.each do |friend_request|
+    %tr
+      %td= friend_request.first_name
+      %td= friend_request.last_name
+      %td= friend_request.means_of_communication
+      %td= friend_request.times_you_will_contact_each_year
+      %td= friend_request.length_of_conversation_minute
+      %td= link_to 'Show', friend_request
+      %td= link_to 'Edit', edit_friend_request_path(friend_request)
+      %td= link_to 'Destroy', friend_request, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Friend request', new_friend_request_path
