@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1.rc3'
+gem 'rails', '~>3.1'
 gem 'haml'
 gem 'jquery-rails'
 gem 'thin'
@@ -25,3 +25,6 @@ group :development, :test do
   gem 'haml-rails'
 end
 
+group :production do
+  gem 'pg'
+end

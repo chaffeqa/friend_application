@@ -26,6 +26,7 @@ class FriendRequestsController < ApplicationController
   # POST /friend_requests.json
   def create
     @friend_request = FriendRequest.new(params[:friend_request])
+    @friend_request.ip_address = request.remote_ip
 
     respond_to do |format|
       if @friend_request.save
